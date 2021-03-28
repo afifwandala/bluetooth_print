@@ -70,10 +70,10 @@ public class PrintContent {
                         // 打印QRCode
                         esc.addPrintQRCode();
                   }else if("image".equals(type)){
-                        byte[] bytes = Base64.decode(content, Base64.DEFAULT);
-                        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                        esc.addRastBitImage(bitmap, 576, 0);
-                  }
+        byte[] bytes = Base64.decode(content, Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        tsc.addRastBitImage(bitmap, width, 0);
+  }
 
                   if(linefeed == 1){
                         //打印并换行
@@ -146,7 +146,7 @@ public class PrintContent {
                   }else if("image".equals(type)){
         byte[] bytes = Base64.decode(content, Base64.DEFAULT);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        esc.addRastBitImage(bitmap, width, 0);
+        tsc.addRastBitImage(bitmap, width, 0);
   }
             }
 
